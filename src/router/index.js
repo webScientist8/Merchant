@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import home from '@/views/home'
+import sliderPath from './silderPath'
 
 Vue.use(Router)
 
@@ -8,8 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'home',
+      meta: {
+        name: '首页',
+        auth: false
+      },
+      component: home,
+      children: sliderPath
     }
   ]
 })
