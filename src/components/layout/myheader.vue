@@ -1,5 +1,5 @@
 <template>
-  <el-header>
+  <el-header style="text-align: right;font-size: 12px">
     <el-radio-group v-model="isCollapse">
       <el-radio-button :label="false">展开</el-radio-button>
       <el-radio-button :label="true">收起</el-radio-button>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'header',
+  name: 'myheader',
   data () {
     return {
       isCollapse: true
@@ -33,13 +33,12 @@ export default {
   }
 }
 </script>
+<style>
+</style>
 
 <style lang="stylus">
   .el-header
     color: #333
     line-height: 60px
-    font-size 12px
-    display flex
-    justify-content space-between
     background: #B3C0D1
 </style>

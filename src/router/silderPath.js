@@ -11,7 +11,7 @@ export default[
     meta: {
       name: '基本设置',
       auth: false,
-      icon: 'el-icon-s-custom'
+      icon: ''
     },
     component: abstract,
     children: [
@@ -33,7 +33,7 @@ export default[
     meta: {
       name: '商品管理',
       acth: false,
-      icon: 'el-icon-s-opportunity'
+      icon: ''
     },
     component: abstract,
     children: [
@@ -55,7 +55,7 @@ export default[
     meta: {
       name: '订单管理',
       acth: false,
-      icon: 'el-icon-share'
+      icon: ''
     },
     component: abstract,
     children: [

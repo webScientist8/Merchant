@@ -1,21 +1,18 @@
 <template>
   <el-aside width="auto" style="background-color: rgb(238, 241, 246)">
-    <div :class="isCollapse ? 'logo min-logo' : 'logo'">
-      <img src="../../assets/logo.png" alt="">
-    </div>
     <el-menu
-      class="el-menu"
-      :default-active="activeMenu"
       unique-opened
       router
       @open="handleOpen"
       @close="handleClose"
       :collapse="isCollapse"
     >
+      <div v-for="(route , index) in Routers" :key="index">
         <el-submenu :key="index" :index="route.name">
           <template slot="title"><i class="el-icon-message"></i>{{route.meta.name}}</template>
             <el-menu-item v-for="(cRoute,cIndex) in route.children" :key="cIndex" :index="cRoute.name" :route="cRoute">{{cRoute.meta.name}}</el-menu-item>
         </el-submenu>
+      </div>
     </el-menu>
   </el-aside>
 </template>
@@ -23,8 +20,8 @@
 <script>
 import sliderPath from '../../router/silderPath'
 export default {
-  props: ['isCollapse'],
   name: 'slider',
+  props: ['isCollapse'],
   data () {
     return {
       Routers: sliderPath
@@ -47,16 +44,11 @@ export default {
     color: #333;
     overflow-y: auto
   }
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
 </style>
 
 <style lang="stylus" scoped>
-  .logo
-    width: 200px
-    transition: width 0.5s linear
-    img
-      width: 100%
-  .min-logo
-    width 64px;
-    transition: width 0.3s
-
 </style>
